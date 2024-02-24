@@ -1,12 +1,15 @@
+import {  useTodos } from '../TodosContext';
 import './Todo.scss';
 
-
-function Todo({ todo, deleteTodo, toggleIsDone }) {
+function Todo({ todo }) {
+  const store = useTodos();
 
   return (
     <>
         <div className={`todo ${todo.isDone ? 'done' : ''}`}>
-            <button className="erase" onClick={() => deleteTodo(todo.id)}>x erase</button>
+            <button className="erase" onClick={() => store.dispatch({ type: 'deleted', id: todo.id })}>
+                x erase
+            </button>
             <h3>
                 {todo.title}
             </h3>
@@ -17,7 +20,7 @@ function Todo({ todo, deleteTodo, toggleIsDone }) {
                 <input 
                     type="checkbox" 
                     defaultChecked={todo.isDone} 
-                    onChange={() => toggleIsDone(todo.id)} 
+                    onChange={() => store.dispatch({ type: 'toggledIsDone', id: todo.id })} 
                     id={`task-check-${todo.id}`}
                 />
                 <label htmlFor={`task-check-${todo.id}`}>

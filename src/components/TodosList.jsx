@@ -1,19 +1,8 @@
-import { useContext } from 'react';
-import { TodosContext } from '../TodosContext.js';
+import { useTodos } from '../TodosContext.jsx';
 import Todo from './Todo.jsx';
 
 function TodosList() {
-  const store = useContext(TodosContext);
-
-  function deleteHandler(id) {
-    if (confirm('Confirma exclusão da tarefa?')) {
-      store.dispatch({ type: 'deleted', id });
-    }
-  }
-
-  function toggleIsDoneHandler(id) {
-    store.dispatch({ type: 'toggledIsDone', id });
-  }
+  const store = useTodos();
 
   return (
     <>
@@ -23,8 +12,6 @@ function TodosList() {
             <Todo
               key={todo.id}
               todo={todo}
-              deleteTodo={(id) => deleteHandler(id)}
-              toggleIsDone={(id) => toggleIsDoneHandler(id)}
             />
           ))}
 

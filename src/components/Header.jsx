@@ -1,6 +1,8 @@
+import { useTodos } from '../TodosContext';
 import './Header.scss';
 
 function Header({ appName }) {
+    const store = useTodos();
 
     return (
       <>
@@ -12,7 +14,9 @@ function Header({ appName }) {
                     </h1>
                 </div>
                 <div className="header-side">
-                    <button className="btn secondary">+ Add To-Do</button>
+                    <button className="btn secondary" onClick={() => store.setModalOpen(true)}>
+                        + Add To-Do
+                    </button>
                 </div>
             </div>
         </div>
