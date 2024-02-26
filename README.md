@@ -15,9 +15,3 @@ $ npm run dev
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/luiz-s-de-oliveira-6b6067210)
 [![E-mail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:luiiz.silverio@gmail.com)
-
-
-O objetivo é simplesmente reproduzir a interface do Spotify.<br/>
-<br/>
-
-![](https://github.com/luiizsilverio/spotify-clone/blob/master/src/assets/screenshot.png)
