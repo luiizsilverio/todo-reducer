@@ -5,7 +5,7 @@ export default function todosReducer(todos, action) {
       if (confirm('Confirma exclusão da tarefa?')) {
         return todos.filter(todo => todo.id !== action.id);
       } else {
-        return state;
+        return todos;
       }
     }
     case 'toggledIsDone': {
@@ -21,6 +21,6 @@ export default function todosReducer(todos, action) {
       newTodo.id = todos.length ? Math.max(...todos.map(todo => todo.id)) + 1 : 1;
       return [...todos, newTodo];
     }
-    default: return state;
+    default: return todos;
   }
 }

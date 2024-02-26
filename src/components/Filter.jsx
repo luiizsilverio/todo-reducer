@@ -1,22 +1,34 @@
+import { useTodos } from '../TodosContext';
 import './Filter.scss';
 
 function Filter() {
+    const store = useTodos();
 
     return (
     <>
         <div className="filters">
             <div>
-                <p>Filter by state</p>
+                <p>Filtrar por estado</p>
                 <div className="badges">
-                    <div className="badge selected">
-                        To-Do
+                    <div 
+                      className={`badge ${store.filter === "todo" ? "selected" : "" }`}
+                      onClick={() => store.setFilter("todo")}
+                    >
+                        A fazer
                     </div>
-                    <div className="badge">
-                        Done
+                    <div 
+                      className={`badge ${store.filter === "done" ? "selected" : "" }`}
+                      onClick={() => store.setFilter("done")}
+                    >
+                        Feito
                     </div>
-                    <span className="clear">
-                        x clear
-                    </span>
+                    {
+                      store.filter && (
+                        <span className="clear" onClick={() => store.setFilter("")}>
+                            x limpar
+                        </span>
+                      )
+                    }
                 </div>
             </div>
         </div>

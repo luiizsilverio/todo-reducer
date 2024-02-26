@@ -15,7 +15,7 @@ function Header({ appName }) {
                 </div>
                 <div className="header-side">
                     <button className="btn secondary" onClick={() => store.setModalOpen(true)}>
-                        + Add To-Do
+                        + Adicionar tarefa
                     </button>
                 </div>
             </div>

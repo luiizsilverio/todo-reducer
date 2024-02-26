@@ -24,7 +24,7 @@ function Todo({ todo }) {
                     id={`task-check-${todo.id}`}
                 />
                 <label htmlFor={`task-check-${todo.id}`}>
-                    {!todo.isDone ? 'To-Do' : 'Done'}
+                    {!todo.isDone ? 'A fazer' : 'Feito'}
                 </label>
             </div>
         </div>

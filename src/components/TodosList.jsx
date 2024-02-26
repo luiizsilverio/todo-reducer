@@ -8,12 +8,17 @@ function TodosList() {
     <>
         <div className="todos">
 
-          {store.todos.map(todo => (
-            <Todo
-              key={todo.id}
-              todo={todo}
-            />
-          ))}
+          {store.filteredTodos().length ? 
+            store.filteredTodos().map(todo => (
+              <Todo
+                key={todo.id}
+                todo={todo}
+              />
+            )) 
+            : (
+                <span>Nenhuma tarefa a ser exibida. Tente limpar o filtro.</span>
+              )
+          }
 
         </div>
     </>
